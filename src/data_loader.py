@@ -8,29 +8,15 @@ import librosa.display
 import sounddevice as sd
 import soundfile as sf
 from itertools import cycle
+import torch
 
-def load_audio(file_path, sample_rate=22050):
-    audio, sr = librosa.load(file_path, sr=sample_rate)
-    return audio, sr
+def mel_spectrogram(filename, note):
+    y, sr = librosa.load(filename, sr=22050)
 
-y, sr = librosa.load('data/mixkit-instrument-echo-swell-2673.wav', sr=22050)
+    S = librosa.feature.melspectrogram(y=y, sr=sr, n_mels=256)
+    S_db = librosa.power_to_db(S, ref=np.max)
 
+    mel_tensor = torch.tensor(S_db).unsqueeze(0)
 
-def waveform(y,sr):
-    plt.figure(figsize=(12, 4))
-    librosa.display.waveshow(y, sr=sr, color='blue') 
-    plt.title('Audio Waveform')
-    plt.xlabel('Time (s)')
-    plt.ylabel('Amplitude')
-    plt.show()
+    torch.save(mel_tensor, f'mel_tensors/{note}.pt')
 
-D = librosa.stft(y)
-S_db = librosa.amplitude_to_db(np.abs(D),ref=np.max)
-S_db.shape
-
-fig,ax = plt.subplots(figsize=(10,5))
-img = librosa.display.specshow(S_db, x_axis='time', y_axis ='log',ax=ax)
-
-plt.colorbar(img, ax=ax)
-plt.title('Spectrogram')
-plt.show()
