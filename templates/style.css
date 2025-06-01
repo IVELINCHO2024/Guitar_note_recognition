@@ -1,0 +1,186 @@
+.poppins-medium {
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+}
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+body {
+    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url("images/Music_Notes_PNG_Clip_Art_Image-970625014.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;   
+    overflow-x: hidden; 
+    margin: 0;
+}
+
+header {
+    z-index: 1000;
+    width: 100%; 
+    position: fixed; 
+    top: 0;
+    left: 0;
+    background-color: rgba(59, 62, 79, 0.7); 
+    padding: 10px 0;
+    backdrop-filter: blur(2px); 
+    align-items: center; 
+}
+
+#title {
+    font-weight: 900;
+    font-size: 2em;
+    margin-left: 1em;
+    color: white;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px 20px;
+}
+
+.nav {
+    list-style-type: none;
+    display: flex; 
+    padding: 0;
+    margin: 0;
+    margin-right: 3em;
+}
+
+.nav a {
+    text-decoration: none;
+    color: white;
+    padding: 15px 20px;
+    display: inline-block; 
+}
+
+.nav a:hover {
+    border-radius: 5px;
+    background-color: rgb(18, 17, 17);
+}
+.nav i{
+    color: white;
+   
+}
+
+.hero-btn {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 12px 34px;
+    font-weight: 500;
+    font-size: 17px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.hero-btn:hover {
+    border: 1px solid #f44336;
+    background: #e35248;
+    transition: 1s;
+}
+
+#Info {
+    font-weight: 600;
+    font-family: "Lucida Handwriting", cursive;
+    color: white;
+    font-size: 62px;
+    text-align: center;
+    padding: 20px;
+    border-radius: 100px;
+    width: 90%;
+    max-width: 1000px;
+    margin: 70px auto 30px;
+}
+#Obesnenie{
+    font-weight: 400;
+    font-size: 21px;
+    text-align: center;
+    padding: 20px;
+    border-radius: 30px;
+    width: 90%;
+    max-width: 600px;
+    margin: -40px auto 30px;
+}
+.nav i{
+    margin-left: 1em;
+}
+
+
+#reviews-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 50px 20px;
+    max-width: 1200px;
+    
+}
+
+.review-card {
+    background: rgb(163, 163, 163);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    text-align: center;
+    width: 250px;
+    transition: transform 0.3s ease;
+}
+
+.review-card:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.review-card p {
+    font-size: 14px;
+    color: #333;
+}
+
+.reviewer-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+    justify-content: center;
+}
+
+form {
+  background: rgb(4, 9, 30);
+  padding: 0.1em;
+  border-radius: 2em;
+  box-shadow: 0 0.1em 0.3em rgb(4, 9, 30);
+  display: flex;
+  align-items: center;
+  gap: 0.3em;
+}
+
+input[type="file"] {
+  padding: 0.5em;
+  font-size: 0.45em;
+  border: 0.1em solid #ccc;
+  border-radius: 2em;
+}
+
+input[type="submit"] {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 0.1em 0.3em;
+  border-radius: 0.3em;
+  cursor: pointer;
+  font-size: 0.5em;
+}
+
+input[type="submit"]:hover {
+  background-color: #218838;
+}

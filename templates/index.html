@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/c19c712794.js" crossorigin="anonymous"></script>
+    <title>easyTravel</title>
+    <link rel="icon" href="images\eztravels.png" type="image/png">
+
+</head>
+<body>
+    <header class="header">
+        <nav>
+            <h1 id = "title">StrumSense</h1>
+            <ul class="nav">
+                <li><a href="/home">Home</a></li>
+                <li><a href="/search">Service</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="Info">
+        <h1 id="Info">Guitar note recognition</h1>
+        <br>
+        <p id="Obesnenie">"StrumSense" helps you to find out a guitar note with given file </p>
+        <br>
+        <p id="Obesnenie">Put your file here (only ".wav" files)</p>
+
+        <form method="POST" enctype="multipart/form-data">
+         <input type = "file" name = "audiofile" accept=".wav">
+         <input type = "submit" value = "Upload file">
+        </form>
+    </div>
+<script>
+    const fileInput = document.getElementById("audiofile");
+    fileInput.addEventListener("change", function () {});
+</script>
+</body>
+</html>
