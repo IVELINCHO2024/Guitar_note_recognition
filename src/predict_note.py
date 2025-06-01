@@ -3,6 +3,7 @@ import torch.nn.functional as F
 import librosa
 import numpy as np
 from CNN_model import NoteCNN
+import os
 
 
 def wav_to_mel_tensor_fixed(wav_path, target_time_frames=86):
@@ -42,9 +43,9 @@ def predict_note(model_path, label_mapping_path, wav_path, device=None):
 
 
 if __name__ == "__main__":
-    model_path = 'note_model.pth'
-    label_mapping_path = 'label_mapping.pth'
-    wav_path = input()
+    model_path = os.path.join('saved_models', 'note_model.pth')
+    label_mapping_path = os.path.join('saved_models', 'label_mapping.pth')
+    wav_path = input('Put your .wav file path here: ')
 
     note = predict_note(model_path, label_mapping_path, wav_path)
     print(f"Predicted note: {note}")

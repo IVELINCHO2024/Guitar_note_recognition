@@ -2,8 +2,7 @@ import torch
 import torch.nn as nn
 import torch.optim as optim
 from torch.utils.data import DataLoader
-
-from Dataset_maker import MelspectrogramDataset
+from dataset_maker import MelspectrogramDataset
 from CNN_model import NoteCNN
 
 def main():
