@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'style.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/c19c712794.js" crossorigin="anonymous"></script>
@@ -33,6 +33,10 @@
          <input type = "file" name = "audiofile" accept=".wav">
          <input type = "submit" value = "Upload file">
         </form>
+
+        {% if note %}
+          <h2> The note is {{note}} </h2>
+        {% endif %}
     </div>
 <script>
     const fileInput = document.getElementById("audiofile");
