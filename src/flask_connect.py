@@ -13,25 +13,31 @@ model_path = 'saved_models/note_model.pth'
 label_mapping_path = 'saved_models/label_mapping.pth'
 
 @app.route('/', methods = ['GET', 'POST'])
-def index():
+def note_prediction():
     note = None
     if request.method == 'POST':
         if 'audio' not in request.files:
              flash('Not a suitable file')
         
-        file = request.file['audio']
+        file = request.files['audio']
         if file.filename == '':
             return 'File is not selected'
         
         if file:
             filename = secure_filename(file.filename)
-            filepath = os.path.join(app.config['UPLOAD_FOLDER', filepath])
+            filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
             file.save(filepath)
 
         note = predict_note(model_path, label_mapping_path, filepath)
         os.remove(filepath)
+        return redirect(url_for("result", note = note))
 
-    return render_template('note_ui.html', note = note)
+    return render_template('note_ui.html')
+
+@app.route('/result')
+def result():
+    note = request.args.get('note')
+    return render_template('result.html', note = note)
 
 if __name__ == '__main__':
     os.makedirs(UPLOAD_FOLDER, exist_ok=True)

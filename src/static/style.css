@@ -101,6 +101,22 @@ nav {
     max-width: 1000px;
     margin: 70px auto 30px;
 }
+
+.info{
+    font-weight: 600;
+    background-color: rgba(59, 62, 79);
+    font-family: "Lucida Handwriting", cursive;
+    color: white;
+    font-size: 62px;
+    text-align: center;
+    padding: 20px;
+    border-radius: 100px;
+    width: 90%;
+    max-width: 1000px;
+    margin: 70px auto 30px;
+    margin-top: 3.5em;
+}
+
 #Obesnenie{
     font-weight: 400;
     font-size: 25px;
