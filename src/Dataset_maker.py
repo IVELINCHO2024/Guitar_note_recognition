@@ -18,20 +18,3 @@ class MelspectrogramDataset(Dataset):
 
         self.labels = sorted(list(set(self.labels)))
         self.label2idx = {label: i for i, label in enumerate(self.labels)}
-
-    def __len__(self):
-        return len(self.filepaths)
-
-    def __getitem__(self, idx):
-        filepath = self.filepaths[idx]
-        mel_tensor = torch.load(filepath)
-
-        label_str = os.path.basename(os.path.dirname(filepath))
-        label = self.label2idx[label_str]
-
-        return mel_tensor, label
-
-    def get_list(self):
-        return self.filepaths
-
-

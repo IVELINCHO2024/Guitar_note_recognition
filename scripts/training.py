@@ -7,8 +7,8 @@ from CNN_model import NoteCNN
 
 def main():
     dataset = MelspectrogramDataset('mel_tensors')
-    print(f"Dataset size: {len(dataset)}")
-    print(f"Labels: {dataset.labels}")
+    #print(f"Dataset size: {len(dataset)}")
+    #print(f"Labels: {dataset.labels}")
 
     dataloader = DataLoader(dataset, batch_size=16, shuffle=True)
 
@@ -43,7 +43,7 @@ def main():
 
     torch.save(model.state_dict(), 'note_model.pth')
     torch.save(dataset.label2idx, 'label_mapping.pth')
-    print("Training finished and model saved.")
+    #print("Training finished and model saved.")
 
 if __name__ == "__main__":
     main()
