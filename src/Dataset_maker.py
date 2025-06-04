@@ -8,13 +8,11 @@ class MelspectrogramDataset(Dataset):
         self.filepaths = []
         self.labels = []
 
-        # Recursively walk through all folders under root_dir
         for dirpath, _, filenames in os.walk(root_dir):
             for file in filenames:
                 if file.endswith('.pt'):
                     full_path = os.path.join(dirpath, file)
                     self.filepaths.append(full_path)
-                    # label = parent folder name
                     label = os.path.basename(dirpath)
                     self.labels.append(label)
 

@@ -2,7 +2,7 @@ import torch
 import torch.nn.functional as F
 import librosa
 import numpy as np
-from CNN_model import NoteCNN
+from .CNN_model import NoteCNN
 import os
 
 

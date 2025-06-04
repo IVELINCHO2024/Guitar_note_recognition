@@ -1,5 +1,5 @@
 from flask import Flask,render_template,request,Response,redirect,url_for,session,flash
-from predict_note import predict_note
+from scripts.prediction import predict_note
 from werkzeug.utils import secure_filename
 import os
 
