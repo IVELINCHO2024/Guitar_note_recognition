@@ -21,7 +21,7 @@ def note_prediction():
         
         file = request.files['audio']
         if file.filename == '':
-            return 'File is not selected'
+             flash('File is not selected')
         
         if file:
             filename = secure_filename(file.filename)
